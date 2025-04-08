@@ -178,15 +178,21 @@ function App({
       </Tabs>
     ) : (
       <Tabs {...tabProps}>
-        <TabScreen label="Explore" icon={showIcons ? 'compass' : undefined}>
+        <TabScreen
+          label="Explore"
+          icon={showIcons ? 'compass' : undefined}
+          badge={showBadges ? '33' : undefined}
+        >
           <ScrollView>
             <ExploreWitHookExamples />
             {settings}
           </ScrollView>
         </TabScreen>
-        <TabScreen label="Flights" icon={showIcons ? 'airplane' : undefined}>
-          <ScreenWithText text={'Flights'} />
-        </TabScreen>
+        {showFlightTab && (
+          <TabScreen label="Flights" icon={showIcons ? 'airplane' : undefined}>
+            <ScreenWithText text={'Flights'} />
+          </TabScreen>
+        )}
         <TabScreen label="Trips" icon={showIcons ? 'bag-personal' : undefined}>
           <ScreenWithText text={'Trips'} />
         </TabScreen>
