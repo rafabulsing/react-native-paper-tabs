@@ -179,7 +179,10 @@ function App({
     ) : (
       <Tabs {...tabProps}>
         <TabScreen label="Explore" icon={showIcons ? 'compass' : undefined}>
-          <ExploreWitHookExamples />
+          <ScrollView>
+            <ExploreWitHookExamples />
+            {settings}
+          </ScrollView>
         </TabScreen>
         <TabScreen label="Flights" icon={showIcons ? 'airplane' : undefined}>
           <ScreenWithText text={'Flights'} />
